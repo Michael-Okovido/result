@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    form{
+        border: 3px solid #f1f1f1;
+        width: 22%;
+        margin: auto;
+        } @media screen and (max-width: 768px) {
+        
+        form{
+          width: 50%;
+        } 
+    } 
+    input{
+        width: 30%;
+        
+    }
+    table {
+        margin: 0 auto;
+        font-size: large;
+        border: 1px solid black;
+    }
+
+   
+    td {
+        background-color: #E4F5D4;
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        font-weight: bold;
+        border: 1px solid black;
+       
+        text-align: center;
+    }
+
+    td {
+        font-weight: lighter;
+        padding: auto;
+    }
+    button{
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: auto;
+    }
+    .addbtn{
+        margin-left: 2%;
+    }
+   
+    </style>
+</head>
+<body>
+        
+    <form action="">
+    <table id="myTable">
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+            
+        </tr>
+        <tr>
+            <td><select name="" id="psel">
+                <option value="">Maths</option>
+                <option value="">English</option>
+                <option value="">Civic</option>
+                <option value="">DBl</option>
+                        </select></td>
+            <td><input type="number" name="" id="num"></td>
+            <td><button style="background-color: red;" onclick="deleteRow(this)">X</button></td>
+            
+          </tr>
+          <tr>
+            <td><select name="" id="psel">
+                <option value="">Maths</option>
+                <option value="">English</option>
+                <option value="">Civic</option>
+                <option value="">DBl</option>
+                        </select></td>
+            <td><input type="number" name="" id="num"></td>
+            <td><button style="background-color: red;" onclick="deleteRow(this)">X</button></td>
+            
+          </tr>
+          
+    </table>
+    <button>Submit</button><button class="addbtn" onclick="myCreateFunction()">+</button>
+    </form>
+    <script>
+        function myCreateFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = document.getElementById('psel').innerHTML;
+  cell2.innerHTML = document.getElementById('num').innerHTML;
+}
+        function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+}
+    </script>
+</body>
+</html>

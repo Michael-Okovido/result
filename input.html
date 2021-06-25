@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style>
+      input[type="number"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .container {
+        padding: 16px;
+      }
+
+      button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+      .error {
+        border: 1px solid red;
+        background-color: #f44336;
+      }
+      form{
+        border: 3px solid #f1f1f1;
+        width: 50%;
+        margin: auto;
+        } @media screen and (max-width: 768px) {
+        
+        form{
+          width: 100%;
+        } 
+    }
+    .avatar{
+      width: 20%;
+    }
+    </style>
+  </head>
+  <body>
+    <img src="FOS STAFF 20210602_153126.jpg" alt="Avatar" class="avatar" />
+    <p>NAME:</p>
+    <p>CLASS:</p>
+    <%if (typeof msg != "undefined") {%>
+    <span class="error"><%= msg %></span>
+    <%}%>
+    <form method="POST" , action="/pin">
+      <div class="container">
+        <label for="token"> <strong>Token</strong></label>
+        <input type="number" placeholder="Enter Token" name="pin" required />
+      </div>
+      <button type="submit">Check</button>
+      <button style="width:auto;"><a style="color:white;" href="/logout">Sign Out</a></button>
+    </form>
+     
+  </body>
+</html>
